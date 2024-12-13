@@ -1,0 +1,120 @@
+/* 全站字體設定 */
+body {
+    font-family: "微軟正黑體", "Microsoft JhengHei", "PingFang TC", "Heiti TC", "Arial", sans-serif; /* 字型 */
+}
+
+/* 標題粗體 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+/* 設置整體背景圖片 */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('pic/精裝書封面.png'); 
+    background-size: cover; /* 讓圖片覆蓋整個頁面 */
+    background-position: center; /* 圖片居中 */
+    background-repeat: no-repeat;/*不重複*/
+    background-attachment: fixed; /* 背景固定 */
+}
+
+/* 透明黑色遮罩:參考網站-https://mocationer.com/before-after-css/ */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 黑色遮罩，透明度0.6 */
+    z-index: -1; /* 背景圖片與遮罩在內容下方:https://www.w3schools.com/cssref/pr_pos_z-index.php */
+}
+
+/* 內容保持居中*/
+.main-content, .my-works-section, #about {
+    position: relative; 
+    z-index: 10;/* 讓他在上層 */
+}
+
+
+/* Navbar */
+.navbar-custom {
+    background-color: #4A3C5F;
+}
+/*框線*/
+.my-works-section{
+    border-style:none;
+    
+}
+
+.big-for-pic{
+    border-style:solid;
+    border-color: #F34DA4;
+    border-radius: 15px;/* 圓角 */
+    padding: 20px;/* 內部間距 */
+}
+
+.pics{
+    border-style:none;
+
+}
+
+/* 開頭跟關於我 */
+#about {
+    
+    border-radius: 15px; 
+    padding: 20px; 
+    background-color: #E0E0E0;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8); /*陰影*/
+}
+
+/* Footer */
+.footer-custom {
+    background-color: #4A3C5F;
+    color: white;
+}
+
+/* 所有圖片 */
+.image-card img, .about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+/* 關於我圖片 */
+.about-image {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+/*.forcon{
+    max-width: 10px;
+    max-height: 10px;
+}*/
+
+/* Works */
+/*.my-works-section {
+    background-color: #E0E0E0;
+    padding: 20px;
+    border-radius: 8px;
+}*/
+
+
+.my-works-section {
+    margin-top: 30px;
+}
+
+/* 更多作品按鈕 */
+.btn-more-works {
+    background-color: #F34DA4; /* 按鈕顏色 */
+    border: none; /* 邊框 */
+    color: white; /* 字體顏色 */
+    font-weight: bold; /* 字體加粗 */
+    padding: 10px 20px; /* 內距調整 */
+    border-radius: 8px; /* 圓角 */
+    transition: background-color 0.3s ease; /* 增加動畫效果 */
+}
+
+.btn-more-works:hover {
+    background-color: #d63c90; /* 滑鼠指到時的按鈕顏色 */
+}
