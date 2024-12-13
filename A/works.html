@@ -48,42 +48,42 @@
         <!-- Paintings Section -->
         <div id="paintings" class="main-content">
             <h2 class="text-center mb-4 text-black">插畫</h2>
-            <div class="row g-4">
-                <!-- Image 1 -->
+            <div class="row g-4" id="paintings-container">
+                <!-- Image 1 
                 <div class="col-md-4">
                     <div class="image-card">
                         <img src="pic/OC復健.png" alt="Painting 1">
                     </div>
-                </div>
-                <!-- Image 2 -->
+                </div>-->
+                <!-- Image 2 
                 <div class="col-md-4">
                     <div class="image-card">
                         <img src="pic/克羅利.png" alt="Painting 2">
                     </div>
-                </div>
-                <!-- Image 3 -->
+                </div>-->
+                <!-- Image 3
                 <div class="col-md-4">
                     <div class="image-card">
                         <img src="pic/麒麟.png" alt="Painting 3">
                     </div>
-                </div>
-                <!-- Image 4 -->
+                </div> -->
+                <!-- Image 4 
                 <div class="col-md-4">
                     <div class="image-card">
                         <img src="pic/001-1.jpg" alt="Painting 4">
                     </div>
-                </div>
-                <!-- Image 5 -->
+                </div>-->
+                <!-- Image 5 
                 <div class="col-md-4">
                     <div class="image-card">
                         <img src="pic/2024新年無字.png" alt="Painting 5">
-                    </div>
+                    </div>-->
                 </div>
-                <!-- Image 6 -->
+                <!-- Image 6 
                 <div class="col-md-4">
                     <div class="image-card">
                         <img src="pic/2024spooky month.png" alt="Painting 6">
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -143,6 +143,43 @@
             }
         );
     });
+
+ // Fetch paintings data from server
+ fetch('/paintings')
+        .then(response => response.json())
+        .then(data => {
+            const paintingsContainer = document.getElementById('paintings-container');
+            data.forEach(painting => {
+                const paintingElement = document.createElement('div');
+                paintingElement.classList.add('col-md-4');
+                paintingElement.innerHTML = `
+                    <div class="image-card">
+                        <img src="pic/${painting.imgSrc}" alt="${painting.title}">
+                    </div>
+                `;
+                paintingsContainer.appendChild(paintingElement);
+            });
+        })
+        .catch(err => console.error("Error fetching paintings:", err));
+
+    // Fetch projects data from server
+    fetch('/projects')
+        .then(response => response.json())
+        .then(data => {
+            const projectsContainer = document.getElementById('projects-container');
+            data.forEach(project => {
+                const projectElement = document.createElement('div');
+                projectElement.classList.add('col-md-4');
+                projectElement.innerHTML = `
+                    <div class="image-card">
+                        <img src="pic/${project.imgSrc}" alt="${project.name}">
+                    </div>
+                `;
+                projectsContainer.appendChild(projectElement);
+            });
+        })
+        .catch(err => console.error("Error fetching projects:", err));
+
 </script>
 
     <!-- Bootstrap JS Bundle -->
