@@ -2,19 +2,19 @@ var express = require("express");
 var server = express();
 var bodyParser = require("body-parser");
 
-// 引入 NeDB 模块
+
 var DB = require("nedb-promises");
 var PaintingsDB = DB.create(__dirname + "/paintings.db");
 var ProjectsDB = DB.create(__dirname + "/projects.db");
 
-// 使用静态文件目录
+
 server.use(express.static(__dirname + "/A"));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
-// 初始化数据
+
 async function initializeDatabases() {
-    // 初始化 Paintings 数据
+
     const paintings = await PaintingsDB.find({});
     if (paintings.length === 0) {
         await PaintingsDB.insert([
@@ -30,7 +30,7 @@ async function initializeDatabases() {
         console.log("Paintings database already contains data.");
     }
 
-    // 初始化 Projects 数据
+
     const projects = await ProjectsDB.find({});
     if (projects.length === 0) {
         await ProjectsDB.insert([
@@ -44,10 +44,10 @@ async function initializeDatabases() {
     }
 }
 
-// 调用初始化函数
+
 initializeDatabases().catch((err) => console.error("Error initializing databases:", err));
 
-// 服务端点：获取 Paintings 数据
+
 server.get("/paintings", (req, res) => {
     PaintingsDB.find({}).then(results => {
         if (results != null) {
@@ -58,7 +58,7 @@ server.get("/paintings", (req, res) => {
     });
 });
 
-// 服务端点：获取 Projects 数据
+
 server.get("/projects", (req, res) => {
     ProjectsDB.find({}).then(results => {
         if (results != null) {
@@ -69,13 +69,13 @@ server.get("/projects", (req, res) => {
     });
 });
 
-// 服务端点：提交联系方式数据
+
 server.post("/contact_me", (req, res) => {
     ContactDB.insert(req.body);
     res.send("OK");
 });
 
-// 启动服务器
+
 server.listen(80, () => {
     console.log("Server is running at port 80.");
 });
