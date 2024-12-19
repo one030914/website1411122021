@@ -5,7 +5,7 @@ var server = express();
 var bodyParser = require("body-parser");
 
 //web root
-server.use(express.static(__dirname+"/AgencyProject"));
+server.use(express.static(__dirname+"/A"));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded());
 
