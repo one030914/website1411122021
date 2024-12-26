@@ -18,7 +18,7 @@ body {
     background-attachment: fixed; /* 背景固定 */
 }
 
-
+/*黑色遮罩，因為直接調背景圖片透明度會影響到文字跟內容圖*/
 body::before {
     content: '';
     position: fixed;
@@ -57,8 +57,69 @@ body::before {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);/*陰影*/
 }
 
-/* Footer */
-.footer-custom {
-    background-color: #4A3C5F;
+/* 圖說的樣式 */
+.caption {
+    opacity: 0;
+    transition: opacity 0.3s ease;
     color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 當鼠標懸停在圖片上時，圖說顯示 */
+.image-card:hover .caption {
+    opacity: 1;
+}
+
+/* 圖片卡片的樣式 */
+.image-card img {
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+/* 當鼠標懸停時略微放大圖片 */
+.image-card:hover img {
+    transform: scale(1.05); 
+}
+/*輪轉圖片大小*/
+.carousel-image {
+    width: 300px;
+    height: auto;
+}
+
+/*輪轉圖說*/
+.caption {
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);/*調整透明度*/
+    padding: 10px;
+    border-radius: 5px; /* 圓角 */
+}
+/*上一個下一個按鈕顏色*/
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+}
+
+/*
+@media (max-width: 768px) {
+    .carousel-image {
+        width: 100%; /* 螢幕較小時，圖片寬度會調整為 100% 
+    }
+}
+*/
+
+/* 回首頁按鈕 */
+.btn-more-works {
+    background-color: #F34DA4; /* 按鈕顏色 */
+    border: none; /* 邊框 */
+    color: white; /* 字體顏色 */
+    font-weight: bold; /* 字體加粗 */
+    padding: 10px 20px; /* 內距調整 */
+    border-radius: 8px; /* 圓角 */
+    transition: background-color 0.3s ease; /* 增加動畫效果 */
+}
+
+.btn-more-works:hover {
+    background-color: #d63c90; /* 滑鼠指到時的按鈕顏色 */
 }

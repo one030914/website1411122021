@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>s1411122021 Works</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 引用外部 Index.css -->
+        <link href="works.css" rel="stylesheet">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>s1411122021</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="Index.css">
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-</head>
-
+        <!-- GSAP & ScrollTrigger -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    </head>
 <body>
-    <!-- Navbar -->
+
+    <!-- Navbar 跟首頁一樣 -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Silly Llama</a>
+            <a class="navbar-brand" href="index.html">Silly Llama</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">歡迎</a>
+                        <a class="nav-link" href="index.html#home">歡迎</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">關於我</a>
+                        <a class="nav-link" href="index.html#about">關於我</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#my-works">我的作品</a>
+                        <a class="nav-link" href="works.html">我的作品</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">聯絡資訊</a>
+                        <a class="nav-link" href="index.html#contact">聯絡資訊</a>
                     </li>
                 </ul>
             </div>
@@ -42,112 +42,105 @@
     </nav>
 
     <!-- Main Content -->
-    <div id="home" class="container my-5 pt-5 text-white main-content fade-in">
-        <h1 class="text-center mb-4">歡迎!</h1>
-        <p class="text-center fs-5">這是一個插畫作品集網站</p>
-    </div>
+<div class="container my-5 pt-5 text-white fade-in">
+    <h1 class="text-center mb-4">作品展示</h1>
 
-    <!-- About Me -->
-    <div id="about" class="container my-5 fade-in">
-        <h2 class="text-center mb-4">關於我</h2>
-        <div class="row align-items-center">
-            <div class="col-md-4 text-center">
-                <img class="about-image" src="pic/llama1.png" alt="About Me">
-            </div>
-            <div class="col-md-8 fs-5">
-                <p>嗨!我是拉瑪，我喜歡畫小動物的插圖，也喜歡跟朋友一起做一些企劃!我擅長繪製可愛動物，最喜歡小馬!</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- My Works -->
-    <div id="my-works" class="container my-5 text-white my-works-section fade-in">
-        <h2 class="text-center mb-4">作品預覽</h2>
-        <div id="paintings" class="mb-5 big-for-pic">
-            <h3 class="text-center mb-4">插畫</h3>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img class="pics" src="pic/2024spooky month.png" alt="Painting 1">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img class="pics" src="pic/cwtt32.png" alt="Painting 2">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img class="pics" src="pic/OC復健.png" alt="Painting 3">
-                    </div>
+    <div id="paintings" class="main-content">
+        <h2 class="text-center mb-4 text-black">插畫</h2>
+        <div class="row g-4" id="paintings-container">
+            <!-- 動態顯示插畫資料 -->
+            <div v-for="item in works" :key="item._id" class="col-md-4">
+                <div class="image-card position-relative">
+                    <!-- 動態顯示圖片，使用 :src 綁定圖片路徑 -->
+                    <img class="w-100" :src="'pic/' + item.imgSrc" :alt="item.text">
+                    <!-- 顯示文字 -->
+                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">{{ item.text }}</p>
                 </div>
             </div>
         </div>
-        <div id="projects" class="big-for-pic fade-in">
-            <h3 class="text-center mb-4">合作繪圖企劃</h3>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/OP.png" alt="Project 1">
-                    </div>
+    </div>
+    
+
+    <!-- Projects Section -->
+    <div id="projects" class="main-content mt-5 fade-in">
+        <h2 class="text-center mb-4 text-black">繪圖企劃</h2>
+        <div class="row g-4">
+            <!-- Image 1 -->
+            <div class="col-md-4">
+                <div class="image-card position-relative">
+                    <img class="w-100" src="pic/OP.png" alt="Project 1">
+                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">"阿格妮絲"遊戲企劃角色-歐普</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/llama.png" alt="Project 2">
-                    </div>
+            </div>
+            <!-- Image 2 -->
+            <div class="col-md-4">
+                <div class="image-card position-relative">
+                    <img class="w-100" src="pic/魘.png" alt="Project 2">
+                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">個人世界觀設定之一-夢魘</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/魘.png" alt="Project 3">
-                    </div>
+            </div>
+            <!-- Image 3 -->
+            <div class="col-md-4">
+                <div class="image-card position-relative">
+                    <img class="w-100" src="pic/all.png" alt="Project 3">
+                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">世界觀&角色設計課程成果</p>
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4">
-            <a href="works.html" class="btn btn-more-works">更多作品</a>
+    </div>
+</div>
+
+        <!-- Back to Home Button -->
+        <div class="text-center mt-4 fade-in">
+            <a href="index.html" class="btn btn-more-works">回首頁</a>
         </div>
     </div>
 
-    <!-- Contact -->
-    <div id="contact" class="container my-5 text-white fade-in">
-        <h2 class="text-center mb-4">聯絡資訊</h2>
-        <p class="text-center">E-mail : aa99919@gmail.com</p>
-        <p class="text-center">Facebook : Adeline DE</p>
+ <!-- Contact -->
+ <div id="contact" class="container my-5 text-white fade-in">
+    <h2 class="text-center mb-4">聯絡資訊</h2>
+    <p class="text-center">E-mail : aa</p>
+    <p class="text-center">Facebook : Adeline DE</p>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer-custom py-4">
+    <div class="container text-center">
+        <p>&copy; 1411122021</p>
     </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="footer-custom py-4">
-        <div class="container text-center">
-            <p>&copy; 1411122021</p>
-        </div>
-    </footer>
+<!-- Animation -->
+<script>
+    gsap.registerPlugin(ScrollTrigger);
 
-    <!-- GSAP ScrollTrigger Animation -->
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
+    // 為所有class fade-in的元素設置動畫
+    gsap.utils.toArray(".fade-in").forEach((element) => {
+        gsap.fromTo(
+            element,
+            { opacity: 0, y: 50 }, // 初始狀態
+            {
+                opacity: 1,
+                y: 0, // 動畫結束狀態
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%", // 進入時開始
+                    end: "top 20%", // 離開時結束
+                    toggleActions: "play none none reverse", // 播放-回播
+                },
+                duration: 1, // 動畫持續時間
+            }
+        );
+    });
 
-        // 為所有帶有 fade-in 類別的元素設置動畫
-        gsap.utils.toArray(".fade-in").forEach((element) => {
-            gsap.fromTo(
-                element,
-                { opacity: 0, y: 50 }, // 初始狀態
-                {
-                    opacity: 1,
-                    y: 0, // 動畫結束狀態
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 80%", // 進入視區時開始
-                        end: "top 20%", // 離開視區時結束
-                        toggleActions: "play none none reverse", // 播放與反向
-                    },
-                    duration: 1, // 動畫持續時間
-                }
-            );
-        });
-    </script>
+</script>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js"></script>
 
+    <!-- 引用 app.js -->
+    <script src="app.js"></script>
+</body>
 </html>

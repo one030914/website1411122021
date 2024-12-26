@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>s1411122021 Works</title>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- 引用外部 Index.css -->
-        <link href="works.css" rel="stylesheet">
 
-        <!-- GSAP & ScrollTrigger -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s1411122021 Final</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引用外部 Index.css -->
+    <link href="works.css" rel="stylesheet">
+
+    <!-- GSAP & ScrollTrigger 動畫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+</head>
+
 <body>
 
     <!-- Navbar 跟首頁一樣 -->
@@ -31,7 +33,7 @@
                         <a class="nav-link" href="index.html#about">關於我</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#my-works">My Works</a>
+                        <a class="nav-link" href="works.html">我的作品</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#contact">聯絡資訊</a>
@@ -51,138 +53,236 @@
             <div class="row g-4" id="paintings-container">
                 <!-- Image 1 -->
                 <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/OC復健.png" alt="Painting 1">
+                    <div class="image-card position-relative">
+                        <img class="w-100" src="pic/OC復健.png" alt="Painting 1">
+                        <p class="caption position-absolute top-50 start-50 translate-middle text-center">小馬模板-Sunshine
+                            Lollipop</p><!--圖說-->
                     </div>
                 </div>
                 <!-- Image 2 -->
                 <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/克羅利.png" alt="Painting 2">
-                    </div>
-                </div>
-                <!-- Image 3-->
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/麒麟.png" alt="Painting 3">
-                    </div>
-                </div> 
-                <!-- Image 4 -->
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/001-1.jpg" alt="Painting 4">
-                    </div>
-                </div>
-                <!-- Image 5 -->
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/2024新年無字.png" alt="Painting 5">
-                    </div>
-                </div>
-                <!-- Image 6 -->
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/2024spooky month.png" alt="Painting 6">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Projects Section -->
-        <div id="projects" class="main-content">
-            <h2 class="text-center mb-4 text-black">合作繪圖企劃</h2>
-            <div class="row g-4">
-                <!-- Image 1 -->
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/OP.png" alt="Project 1">
-                    </div>
-                </div>
-                <!-- Image 2 -->
-                <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/魘.png" alt="Project 2">
+                    <div class="image-card position-relative">
+                        <img class="w-100" src="pic/克羅利.png" alt="Painting 2">
+                        <p class="caption position-absolute top-50 start-50 translate-middle text-center">小馬模板-克羅利</p>
                     </div>
                 </div>
                 <!-- Image 3 -->
                 <div class="col-md-4">
-                    <div class="image-card">
-                        <img src="pic/all.png" alt="Project 3">
+                    <div class="image-card position-relative">
+                        <img class="w-100" src="pic/麒麟.png" alt="Painting 3">
+                        <p class="caption position-absolute top-50 start-50 translate-middle text-center">小馬模板-熾燐玥</p>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="col-md-4">
+                    <div class="image-card position-relative">
+                        <img class="w-100" src="pic/2024spooky month.png" alt="Painting 4">
+                        <p class="caption position-absolute top-50 start-50 translate-middle text-center">2024年萬聖節賀圖</p>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="col-md-4">
+                    <div class="image-card position-relative">
+                        <img class="w-100" src="pic/cwtt32.png" alt="Painting 5">
+                        <p class="caption position-absolute top-50 start-50 translate-middle text-center">可頌配咖啡</p>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="col-md-4">
+                    <div class="image-card position-relative">
+                        <img class="w-100" src="pic/2024新年無字.png" alt="Painting 6">
+                        <p class="caption position-absolute top-50 start-50 translate-middle text-center">新年招財龍</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="footer-custom py-4 fade-in">
-        <div class="container text-center">
-            <p>&copy; Silly LlAMA</p>
+        <!-- Projects Section  -->
+        <div id="projects" class="main-content mt-5 fade-in">
+            <h2 class="text-center mb-4 text-black">繪圖企劃</h2>
+            <div class="row g-4">
+                <!-- 第一個輪播 -->
+                <div class="col-md-4">
+                    <div id="projectsCarousel1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- 圖組1 -->
+                            <div class="carousel-item active">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/llama.png" alt="Project 1">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        萬聖節合作繪圖-Llama</p>
+                                </div>
+                            </div>
+                            <!-- 圖組2 -->
+                            <div class="carousel-item">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/water.png" alt="Project 2">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        萬聖節合作繪圖-西瓜</p>
+                                </div>
+                            </div>
+                            <!-- 圖組3 -->
+                            <div class="carousel-item">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/yue.png" alt="Project 3">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        萬聖節合作繪圖-阿玥</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 左右按鈕 -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel1"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">上一張</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel1"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">下一張</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 第二個輪播 -->
+                <div class="col-md-4">
+                    <div id="projectsCarousel2" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- 圖組1 -->
+                            <div class="carousel-item active">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/all.png" alt="Project 1">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        角色設計課程成果-伊拉</p>
+                                </div>
+                            </div>
+                            <!-- 圖組2 -->
+                            <div class="carousel-item">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/ball.png" alt="Project 2">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        角色設計課程成果-比爾</p>
+                                </div>
+                            </div>
+                            <!-- 圖組3 -->
+                            <div class="carousel-item">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/all2.png" alt="Project 3">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        角色設計課程成果-碧月</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 左右按鈕 -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel2"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">上一張</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel2"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">下一張</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 第三個輪播 -->
+                <div class="col-md-4">
+                    <div id="projectsCarousel3" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- 圖組1 -->
+                            <div class="carousel-item active">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/3pony1.png" alt="Project 1">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        隨機關鍵字創角色-舒芙蕾/櫻桃/水手服</p>
+                                </div>
+                            </div>
+                            <!-- 圖組2 -->
+                            <div class="carousel-item">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/3pony2.png" alt="Project 2">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        隨機關鍵字創角色-火焰/兔耳/鐮刀</p>
+                                </div>
+                            </div>
+                            <!-- 圖組3 -->
+                            <div class="carousel-item">
+                                <div class="image-card position-relative">
+                                    <img class="carousel-image d-block w-100" src="pic/3pony3.png" alt="Project 3">
+                                    <p class="caption position-absolute top-50 start-50 translate-middle text-center">
+                                        隨機關鍵字創角色-蛇尾/菸斗/霧</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 左右按鈕 -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel3"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">上一張</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel3"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">下一張</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+            <!-- Back to Home Button -->
+            <div class="text-center mt-4 fade-in">
+                <a href="index.html" class="btn btn-more-works">回首頁</a>
+            </div>
+        </div>
+    <div>
+        <!-- Contact -->
+        <div id="contact" class="container my-5 text-white fade-in">
+            <h2 class="text-center mb-4">聯絡資訊</h2>
+            <p class="text-center">E-mail : aa99919@gmail.com</p>
+            <p class="text-center">Facebook : Adeline DE</p>
 
-<!-- Animation -->
-<script>
-    gsap.registerPlugin(ScrollTrigger);
+        </div>
 
-    // 為所有class fade-in的元素設置動畫
-    gsap.utils.toArray(".fade-in").forEach((element) => {
-        gsap.fromTo(
-            element,
-            { opacity: 0, y: 50 }, // 初始狀態
-            {
-                opacity: 1,
-                y: 0, // 動畫結束狀態
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 80%", // 進入時開始
-                    end: "top 20%", // 離開時結束
-                    toggleActions: "play none none reverse", // 播放-回播
-                },
-                duration: 1, // 動畫持續時間
-            }
-        );
-    });
+        <!-- Footer -->
+        <footer class="footer-custom py-4">
+            <div class="text-center">
+                <p>&copy; 1411122021</p>
+            </div>
+        </footer>
 
- // Fetch paintings data from server
- /*fetch('/paintings')
-        .then(response => response.json())
-        .then(data => {
-            const paintingsContainer = document.getElementById('paintings-container');
-            data.forEach(painting => {
-                const paintingElement = document.createElement('div');
-                paintingElement.classList.add('col-md-4');
-                paintingElement.innerHTML = `
-                    <div class="image-card">
-                        <img src="pic/${painting.imgSrc}" alt="${painting.title}">
-                    </div>
-                `;
-                paintingsContainer.appendChild(paintingElement);
+        <!-- Animation -->
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 為所有class fade-in的元素設置動畫
+            gsap.utils.toArray(".fade-in").forEach((element) => {
+                gsap.fromTo(
+                    element,
+                    { opacity: 0, y: 50 }, // 初始狀態
+                    {
+                        opacity: 1,
+                        y: 0, // 動畫結束狀態
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 80%", // 進入時開始
+                            end: "top 20%", // 離開時結束
+                            toggleActions: "play none none reverse", // 播放-回播
+                        },
+                        duration: 1, // 動畫持續時間
+                    }
+                );
             });
-        })
-        .catch(err => console.error("Error fetching paintings:", err));
 
-    // Fetch projects data from server
-    fetch('/projects')
-        .then(response => response.json())
-        .then(data => {
-            const projectsContainer = document.getElementById('projects-container');
-            data.forEach(project => {
-                const projectElement = document.createElement('div');
-                projectElement.classList.add('col-md-4');
-                projectElement.innerHTML = `
-                    <div class="image-card">
-                        <img src="pic/${project.imgSrc}" alt="${project.name}">
-                    </div>
-                `;
-                projectsContainer.appendChild(projectElement);
-            });
-        })
-        .catch(err => console.error("Error fetching projects:", err));*/
+        </script>
 
-</script>
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js"></script>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- 引用 app.js -->
+        <script src="app.js"></script>
 </body>
+
 </html>
