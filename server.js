@@ -11,12 +11,12 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
 
-var DB = require("nedb-promises");
-var WorksDB = DB.create(__dirname+"/works.db");
+//var DB = require("nedb-promises");
+//var WorksDB = DB.create(__dirname+"/works.db");
 
 
 // 檢查資料庫是否有資料，若無則初始化
-WorksDB.find({}).then(results => {
+/*WorksDB.find({}).then(results => {
     if (results.length === 0) {
         // 插入初始資料
         WorksDB.insert([
@@ -43,7 +43,7 @@ server.get('/works', (req, res) => {  // 使用 server.get()
 });
 
 // 提供靜態文件 (例如 HTML, CSS, JS)
-server.use(express.static(path.join(__dirname, 'A')));
+server.use(express.static(path.join(__dirname, 'A')));*/
 
 
 server.listen(80, ()=>{

@@ -1,6 +1,6 @@
-const { createApp } = Vue;
+//const { createApp } = Vue;
 
-const vueProfolio = createApp({
+/*const vueProfolio = createApp({
     data() {
         return {
             works: []  // 用來儲存作品資料
@@ -21,4 +21,4 @@ const vueProfolio = createApp({
             }
         });
     }
-}).mount("#portfolio");
+}).mount("#portfolio");*/
