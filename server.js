@@ -31,19 +31,19 @@ server.use(bodyParser.urlencoded({ extended: true }));
     } else {
         console.log("資料庫已經有資料");
     }
-}); 
+}); */
 
 // 提供 /works 路由，讓前端能夠獲取資料庫資料
-server.get('/works', (req, res) => {  // 使用 server.get()
+/*server.get('/works', (req, res) => {  // 使用 server.get()
     WorksDB.find({}).then(results => {
         res.json(results);  // 返回 JSON 格式資料
     }).catch(err => {
         res.status(80).send('Error retrieving data from the database');
     });
-});
+});*/
 
 // 提供靜態文件 (例如 HTML, CSS, JS)
-server.use(express.static(path.join(__dirname, 'A')));*/
+//server.use(express.static(path.join(__dirname, 'A')));
 
 
 server.listen(80, ()=>{
